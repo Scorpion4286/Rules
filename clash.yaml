@@ -415,6 +415,35 @@ Rule:
 
 # Liby.list
 # Analytics 数据收集
+# > Ali
+- DOMAIN,acs4baichuan.m.taobao.com,Hijacking
+- DOMAIN,adash.m.taobao.com,Hijacking
+- DOMAIN,adashbc.m.taobao.com,Hijacking
+- DOMAIN,adashbc.ut.taobao.com,Hijacking
+- DOMAIN,adashx.m.taobao.com,Hijacking
+- DOMAIN,adashxgc.ut.taobao.com,Hijacking
+- DOMAIN,agoodm.m.taobao.com,Hijacking
+- DOMAIN,ai.taobao.com,Hijacking
+- DOMAIN,ai.m.taobao.com,Hijacking
+- DOMAIN,api.waptest.taobao.com,Hijacking
+- DOMAIN,apoll.m.taobao.com,Hijacking
+- DOMAIN,c-adash.m.taobao.com,Hijacking
+- DOMAIN,h-adashx.ut.taobao.com,Hijacking
+- DOMAIN,m-adash.m.taobao.com,Hijacking
+- DOMAIN,nbsdk-baichuan.taobao.com,Hijacking
+- DOMAIN,pics.taobaocdn.com,Hijacking
+- DOMAIN,pindao.huoban.taobao.com,Hijacking
+- DOMAIN,re.taobao.com,Hijacking
+- DOMAIN,re.m.taobao.com,Hijacking
+- DOMAIN,rj.m.taobao.com,Hijacking
+- DOMAIN,sdkinit.taobao.com,Hijacking
+- DOMAIN,show.re.taobao.com,Hijacking
+- DOMAIN,simaba.taobao.com,Hijacking
+- DOMAIN,strip.taobaocdn.com,Hijacking
+- DOMAIN,temai.taobao.com,Hijacking
+- DOMAIN,tunion-api.m.taobao.com,Hijacking
+- DOMAIN,unitacs.m.taobao.com,Hijacking
+- DOMAIN,w.m.taobao.com,Hijacking
 # >> Umeng
 - DOMAIN-SUFFIX,umeng.com,Hijacking
 - DOMAIN-SUFFIX,umengcloud.com,Hijacking
@@ -577,14 +606,15 @@ Rule:
 - DOMAIN,amdc.m.taobao.com,Hijacking
 - DOMAIN,optimus-ads.amap.com,Hijacking
 - DOMAIN,optimus-ads.amap.com.w.alikunlun.com,Hijacking
-- DOMAIN,tunion-api.m.taobao.com,Hijacking
 # > AutoHome
 - DOMAIN,adproxy.autohome.com.cn,Hijacking
 - DOMAIN,rd.autohome.com.cn,Hijacking
 - DOMAIN,al.autohome.com.cn,Hijacking
 - DOMAIN,applogapi.autohome.com.cn,Hijacking
+- IP-CIDR,103.75.152.210/32,Hijacking,no-resolve
+- IP-CIDR,103.75.153.3/32,Hijacking,no-resolve
 # (B)
-# > Baidu
+# > Baidu with Domian
 - DOMAIN-SUFFIX,cpro.baidu.com,Hijacking
 - DOMAIN,afd.baidu.com,Hijacking
 - DOMAIN,als.baidu.com,Hijacking
@@ -609,6 +639,7 @@ Rule:
 - DOMAIN,mdrecv.app.cntvwb.cn,Hijacking
 - DOMAIN,sdapprecv.app.cntvwb.cn,Hijacking
 - DOMAIN,vdapprecv.app.cntvwb.cn,Hijacking
+# > ChinaTelecom with Domain
 - DOMAIN,ad.21cn.com,Hijacking
 - DOMAIN,ad.k.21cn.com,Hijacking
 - DOMAIN,admarket.21cn.com,Hijacking
@@ -616,6 +647,9 @@ Rule:
 # > 车来了
 - DOMAIN,atrace.chelaile.net.cn,Hijacking
 - DOMAIN,logs.chelaile.net.cn,Hijacking
+# (D)
+# > 懂球帝
+- DOMAIN,ap.dongqiudi.com,Hijacking
 # (G)
 # > Google
 - DOMAIN-SUFFIX,doubleclick.net,Hijacking
@@ -701,11 +735,6 @@ Rule:
 - DOMAIN,nex.163.com,Hijacking
 - DOMAIN,yt-adp.nosdn.127.net,Hijacking
 - DOMAIN,yt-adp.ws.126.net,Hijacking
-# (Q)
-# > 汽车之家
-- DIMAIN,adproxy.autohome.com.cn,Hijacking
-- IP-CIDR,103.75.152.210/32,Hijacking,no-resolve
-- IP-CIDR,103.75.153.3/32,Hijacking,no-resolve
 # (P)
 # > PPTV
 - DOMAIN,ads.aplus.pptv.com,Hijacking
@@ -806,6 +835,7 @@ Rule:
 # > ZOL
 - DOMAIN,apppv.zol.com.cn,Hijacking
 - DOMAIN,pvnapp.zol.com.cn,Hijacking
+
 # Apple
 - DOMAIN,ocsp.apple.com,Proxy
 - DOMAIN-SUFFIX,digicert.com,Proxy
@@ -1137,7 +1167,7 @@ Rule:
 - DOMAIN-SUFFIX,9to5mac.com,Proxy
 - DOMAIN-SUFFIX,abpchina.org,Proxy
 - DOMAIN-SUFFIX,accountkit.com,Proxy
-- DOMAIN-SUFFIX,adblockplus.org,Proxy
+- DOMAIN-SUFFIX,Hijackingplus.org,Proxy
 - DOMAIN-SUFFIX,adobe.com,Proxy
 - DOMAIN-SUFFIX,adobedtm.com,Proxy
 - DOMAIN-SUFFIX,aerisapi.com,Proxy
