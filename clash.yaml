@@ -1176,20 +1176,20 @@ Rule:
 # Fast
 - DOMAIN-SUFFIX,fast.com,Netflix
 
-# Global.list
+# Proxy.list
 # (DNS Cache Pollution Protection)
 # > Google
-- DOMAIN-SUFFIX,ampproject.org,Global
-- DOMAIN-SUFFIX,appspot.com,Global
-- DOMAIN-SUFFIX,blogger.com,Global
-- DOMAIN-SUFFIX,getoutline.org,Global
-- DOMAIN-SUFFIX,googleapis.cn,Global
-- DOMAIN-SUFFIX,gvt0.com,Global
-- DOMAIN-SUFFIX,gvt1.com,Global
-- DOMAIN-SUFFIX,gvt3.com,Global
-- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Global
-- DOMAIN-KEYWORD,google,Global
-- DOMAIN-KEYWORD,blogspot,Global
+- DOMAIN-SUFFIX,ampproject.org,Proxy
+- DOMAIN-SUFFIX,appspot.com,Proxy
+- DOMAIN-SUFFIX,blogger.com,Proxy
+- DOMAIN-SUFFIX,getoutline.org,Proxy
+- DOMAIN-SUFFIX,googleapis.cn,Proxy
+- DOMAIN-SUFFIX,gvt0.com,Proxy
+- DOMAIN-SUFFIX,gvt1.com,Proxy
+- DOMAIN-SUFFIX,gvt3.com,Proxy
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Proxy
+- DOMAIN-KEYWORD,google,Proxy
+- DOMAIN-KEYWORD,blogspot,Proxy
 - DOMAIN-SUFFIX,abc.xyz,Proxy
 - DOMAIN-SUFFIX,android.com,Proxy
 - DOMAIN-SUFFIX,androidify.com,Proxy
@@ -1254,8 +1254,8 @@ Rule:
 - DOMAIN-SUFFIX,storage.msn.com,Proxy
 - DOMAIN,oneclient.sfx.ms,Proxy
 # > PayPal
-- DOMAIN-SUFFIX,paypal.com,Global
-- DOMAIN-SUFFIX,paypalobjects.com,Global
+- DOMAIN-SUFFIX,paypal.com,Proxy
+- DOMAIN-SUFFIX,paypalobjects.com,Proxy
 # > Line
 - DOMAIN-SUFFIX,lin.ee,Proxy
 - DOMAIN-SUFFIX,line.me,Proxy
@@ -1885,7 +1885,7 @@ Rule:
 - DOMAIN-SUFFIX,ghostnoteapp.com,Proxy
 - DOMAIN-SUFFIX,git.io,Proxy
 - DOMAIN-SUFFIX,gitbook.com,Proxy
-- DOMAIN-SUFFIX,globalsign.com,Proxy
+- DOMAIN-SUFFIX,Proxysign.com,Proxy
 - DOMAIN-SUFFIX,gmocloud.com,Proxy
 - DOMAIN-SUFFIX,go.jp,Proxy
 - DOMAIN-SUFFIX,godaddy.com,Proxy
