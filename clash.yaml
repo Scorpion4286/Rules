@@ -839,7 +839,7 @@ Rule:
 - DOMAIN,apppv.zol.com.cn,Hijacking
 - DOMAIN,pvnapp.zol.com.cn,Hijacking
 
-# Apple
+# Apple.list
 # > Cert
 - DOMAIN,ocsp.apple.com,Apple_API
 - DOMAIN-SUFFIX,digicert.com,Apple_API
@@ -871,20 +871,33 @@ Rule:
 - DOMAIN,apptrailers.itunes.apple.com,Apple_CDN
 - DOMAIN,updates-http.cdn-apple.com,Apple_CDN
 - DOMAIN,api.smoot.apple.cn,Apple_CDN
-# > Apple_Others
+# > Others
+- DOMAIN,amap.com,Apple_CDN
 - DOMAIN,gs.apple.com,Apple_CDN
-- DOMAIN-SUFFIX,aaplimg.com,Apple_API
+- DOMAIN-SUFFIX,aaplimg.com,Apple_CDN
+- DOMAIN-SUFFIX,push.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,apple.co,Apple_API
-- DOMAIN-SUFFIX,apple.com,Apple_API
+- DOMAIN-SUFFIX,apple.com,Apple_CDN
 - DOMAIN-SUFFIX,apple.com.cn,Apple_CDN
 - DOMAIN-SUFFIX,apple-cloudkit.com,Apple_API
 - DOMAIN-SUFFIX,appsto.re,Apple_API
 - DOMAIN-SUFFIX,cdn-apple.com,Apple_CDN
-- DOMAIN-SUFFIX,icloud.com,Apple_API
+- DOMAIN-SUFFIX,icloud.com,Apple_CDN
 - DOMAIN-SUFFIX,icloud.com.cn,Apple_CDN
-- DOMAIN-SUFFIX,icloud-content.com,Apple_API
+- DOMAIN-SUFFIX,icloud-content.com,Apple_CDN
 - DOMAIN-SUFFIX,itunes.com,Apple_API
 - DOMAIN-SUFFIX,me.com,Apple_API
+# > IP-CIDR
+- IP-CIDR,17.0.0.0/8,Apple_API,no-resolve
+- IP-CIDR,63.92.224.0/19,Apple_API,no-resolve
+- IP-CIDR,65.199.22.0/23,Apple_API,no-resolve
+- IP-CIDR,139.178.128.0/18,Apple_API,no-resolve
+- IP-CIDR,144.178.0.0/19,Apple_API,no-resolve
+- IP-CIDR,144.178.36.0/22,Apple_API,no-resolve
+- IP-CIDR,144.178.48.0/20,Apple_API,no-resolve
+- IP-CIDR,192.35.50.0/24,Apple_API,no-resolve
+- IP-CIDR,198.183.17.0/24,Apple_API,no-resolve
+- IP-CIDR,205.180.175.0/24,Apple_API,no-resolve
 # 此选项有助于大多数App开发者分析崩溃信息
 - DOMAIN-SUFFIX,crashlytics.com,REJECT
 # 如果您并不信任此服务提供商或防止其下载消耗过多带宽资源
@@ -1000,6 +1013,9 @@ Rule:
 # > All4
 - DOMAIN-SUFFIX,c4assets.com,GMedia
 - DOMAIN-SUFFIX,channel4.com,GMedia
+# > ABC
+- DOMAIN-SUFFIX,edgedatg.com,GMedia
+- DOMAIN-SUFFIX,go.com,GMedia
 # > AbemaTV
 - DOMAIN-SUFFIX,abema.io,GMedia
 - DOMAIN-SUFFIX,ameba.jp,GMedia
@@ -1049,6 +1065,8 @@ Rule:
 - DOMAIN-SUFFIX,bamgrid.com,GMedia
 - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,GMedia
 - DOMAIN,cdn.registerdisney.go.com,GMedia
+- DOMAIN-SUFFIX,conviva.com,GMedia
+- DOMAIN-SUFFIX,disney.demdex.net,GMedia
 # > encoreTVB
 - DOMAIN-SUFFIX,encoretvb.com,GMedia
 - DOMAIN,content.jwplatform.com,GMedia
@@ -1811,6 +1829,7 @@ Rule:
 - DOMAIN-SUFFIX,box.net,Proxy
 - DOMAIN-SUFFIX,boxun.com,Proxy
 - DOMAIN-SUFFIX,cachefly.net,Proxy
+- DOMAIN-SUFFIX,cdn.angruo.com,Proxy
 - DOMAIN-SUFFIX,cdn.segment.com,Proxy
 - DOMAIN-SUFFIX,cdnst.net,Proxy
 - DOMAIN-SUFFIX,celestrak.com,Proxy
