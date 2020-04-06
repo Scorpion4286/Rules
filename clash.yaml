@@ -1199,6 +1199,10 @@ Rule:
 - IP-CIDR,198.45.48.0/20,Netflix
 - IP-CIDR,207.45.72.0/22,Netflix
 - IP-CIDR,208.75.76.0/22,Netflix
+# Netflix Area-check prod.cloud.geo.netflix.com
+- IP-CIDR,52.89.124.203/32,Netflix
+- IP-CIDR,54.148.37.5/32,Netflix
+- IP-CIDR,34.210.42.111/32,Netflix
 # Fast
 - DOMAIN-SUFFIX,fast.com,Netflix
 
