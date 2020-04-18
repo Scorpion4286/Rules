@@ -547,7 +547,6 @@ Rule:
 - DOMAIN-SUFFIX,smartnews-ads.com,Hijacking
 - DOMAIN-SUFFIX,supersonic.com,Hijacking
 - DOMAIN-SUFFIX,supersonicads.com,Hijacking
-- DOMAIN-SUFFIX,tagtic.cn,Hijacking
 - DOMAIN-SUFFIX,tanv.com,Hijacking
 - DOMAIN-SUFFIX,tanx.com,Hijacking
 - DOMAIN-SUFFIX,tapjoy.com,Hijacking
@@ -586,6 +585,7 @@ Rule:
 - DOMAIN,app-ad.variflight.com,Hijacking
 - DOMAIN,appnext-a.akamaihd.net,Hijacking
 - DOMAIN,appnext.hs.llnwd.net,Hijacking
+- DOMAIN,g1.tagtic.cn,Hijacking
 - DOMAIN,ggs.myzaker.com,Hijacking
 - DOMAIN,itad.linetv.tw,Hijacking
 - DOMAIN,ja.chushou.tv,Hijacking
@@ -600,6 +600,7 @@ Rule:
 # > Alibaba
 - DOMAIN,optimus-ads.amap.com,Hijacking
 - DOMAIN,optimus-ads.amap.com.w.alikunlun.com,Hijacking
+- DOMAIN,tunion-api.m.taobao.com,Hijacking
 - IP-CIDR,112.29.211.120/32,Hijacking,no-resolve
 # > Apple
 - DOMAIN-SUFFIX,ads.internal.unity3d.com,Hijacking
@@ -614,6 +615,7 @@ Rule:
 - IP-CIDR,103.75.152.210/32,Hijacking,no-resolve
 - IP-CIDR,103.75.153.3/32,Hijacking,no-resolve
 # (B)
+# > Baidu
 - DOMAIN-SUFFIX,cpro.baidu.com,Hijacking
 - DOMAIN,afd.baidu.com,Hijacking
 - DOMAIN,als.baidu.com,Hijacking
@@ -633,6 +635,7 @@ Rule:
 - DOMAIN,advertise.baicizhan.com,Hijacking
 - DOMAIN,advertise.baicizhan.org,Hijacking
 # (C)
+# > ChinaTelecom
 - DOMAIN,ad.21cn.com,Hijacking
 - DOMAIN,ad.k.21cn.com,Hijacking
 - DOMAIN,admarket.21cn.com,Hijacking
@@ -770,6 +773,7 @@ Rule:
 - DOMAIN,track.sohu.com,Hijacking
 - DOMAIN,v2.reachmax.cn,Hijacking
 # (T)
+# > Tencent
 - DOMAIN-SUFFIX,e.qq.com,Hijacking
 - DOMAIN-SUFFIX,gdt.qq.com,Hijacking
 - DOMAIN-SUFFIX,l.qq.com,Hijacking
@@ -974,12 +978,32 @@ Rule:
 - DOMAIN-SUFFIX,digicert.com,Apple_API
 - DOMAIN-SUFFIX,entrust.net,Apple_API
 - DOMAIN,ocsp.verisign.net,Apple_API
+# > High-level API
+- DOMAIN,api.apps.apple.com,Apple_API
+- DOMAIN,apps.apple.com,Apple_API
+- DOMAIN,xp.apple.com,Apple_API
+- DOMAIN,bag.itunes.apple.com,Apple_API
+- DOMAIN,api-edge.apps.apple.com,Apple_API
+- DOMAIN,play.itunes.apple.com,Apple_API
+- DOMAIN,se.itunes.apple.com,Apple_API
+- DOMAIN,se-edge.itunes.apple.com,Apple_API
+- DOMAIN,su.itunes.apple.com,Apple_API
+- DOMAIN,upp.itunes.apple.com,Apple_API
+- DOMAIN,beta.music.apple.com,Apple_API
+- DOMAIN-KEYWORD,buy.itunes.apple.com,Apple_API
+# > Trailer
+- DOMAIN-SUFFIX,hls.itunes.apple.com,Apple_API
+# > Update
+- DOMAIN,supportdownload.apple.com,Apple_CDN
+- DOMAIN,appldnld.apple.com,Apple_CDN
+- DOMAIN,swcdn.apple.com,Apple_CDN
+- DOMAIN,apptrailers.itunes.apple.com,Apple_CDN
+- DOMAIN,updates-http.cdn-apple.com,Apple_CDN
 # > App Store
 - DOMAIN-SUFFIX,mzstatic.com,Apple_CDN
 - DOMAIN,iosapps.itunes.apple.com,Apple_CDN
 - DOMAIN,osxapps.itunes.apple.com,Apple_CDN
 - DOMAIN,beta.itunes.apple.com,Apple_CDN
-- DOMAIN,hls.itunes.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,apps.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,appstore.com,Apple_CDN
 # > Apple Music
@@ -987,40 +1011,60 @@ Rule:
 - DOMAIN,aod.itunes.apple.com,Apple_CDN
 - DOMAIN,mvod.itunes.apple.com,Apple_CDN
 - DOMAIN,api.smoot.apple.cn,Apple_CDN
+- DOMAIN,streamingaudio.itunes.apple.com,Apple_CDN
 - DOMAIN,audio.itunes.apple.com,Apple_API
 - DOMAIN-SUFFIX,blobstore.apple.com,Apple_API
 - DOMAIN,itunes.apple.com,Apple_API
+# > iTunes Stream
+- DOMAIN-SUFFIX,hls-amt.itunes.apple.com,Apple_API
+- DOMAIN-SUFFIX,audio-ssl.itunes.apple.com,Apple_API
 # > Apple TV
 - DOMAIN,np-edge.itunes.apple.com,GMedia
 - DOMAIN,play-edge.itunes.apple.com,GMedia
 - DOMAIN-SUFFIX,tv.apple.com,GMedia
-# > Update
-- DOMAIN,supportdownload.apple.com,Apple_CDN
-- DOMAIN,appldnld.apple.com,Apple_CDN
-- DOMAIN,swcdn.apple.com,Apple_CDN
-- DOMAIN,apptrailers.itunes.apple.com,Apple_CDN
-- DOMAIN,updates-http.cdn-apple.com,Apple_CDN
 # > Apple Map
 - DOMAIN,amap.com,Apple_CDN
 - DOMAIN,gs.apple.com,Apple_CDN
-- DOMAIN-SUFFIX,ls.apple.com,Apple_CDN
+- DOMAIN,gs-loc.apple.com,Apple_CDN
 - DOMAIN,gs-loc-cn.apple.com,Apple_CDN
-# Apple News
+- DOMAIN-KEYWORD,ls.apple.com,Apple_CDN
+- DOMAIN-KEYWORD,ls-apple.com,Apple_CDN
+- DOMAIN-SUFFIX,lcdn-locator.apple.com,Apple_CDN
+- DOMAIN-SUFFIX,lcdn-registration.apple.com,Apple_CDN
+# > Apple News
+- DOMAIN,news-events.apple.com,Apple_API
+- DOMAIN,news-edge.apple.com,Apple_API
+- DOMAIN,apple.comscoreresearch.com,Apple_API
 - DOMAIN-SUFFIX,apple.news,Apple_API
-# > Others
-- DOMAIN-SUFFIX,aaplimg.com,Apple_CDN
+# > Developer
+- DOMAIN,devimages-cdn.apple.com,Apple_API
+- DOMAIN,devstreaming-cdn.apple.com,Apple_API
+- DOMAIN,js-cdn.music.apple.com,Apple_API
+# > Reserve
+- DOMAIN,reserve-prime.apple.com,Apple_CDN
+- DOMAIN-SUFFIX,ess.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,push.apple.com,Apple_CDN
-- DOMAIN-SUFFIX,apple.co,Apple_API
-- DOMAIN-SUFFIX,apple.com,Apple_CDN
-- DOMAIN-SUFFIX,apple.com.cn,Apple_CDN
-- DOMAIN-SUFFIX,apple-cloudkit.com,Apple_API
-- DOMAIN-SUFFIX,appsto.re,Apple_API
+- DOMAIN-SUFFIX,push-apple.com.akadns.net,Apple_CDN
+# > Others
+- DOMAIN,api.smoot.apple.com,Apple_CDN
+- DOMAIN,captive.apple.com,Apple_CDN
+- DOMAIN,configuration.apple.com,Apple_CDN
+- DOMAIN,guzzoni.apple.com,Apple_CDN
+- DOMAIN-SUFFIX,aaplimg.com,Apple_CDN
+- DOMAIN-SUFFIX,apple-dns.net,Apple_CDN
 - DOMAIN-SUFFIX,cdn-apple.com,Apple_CDN
+- DOMAIN-SUFFIX,appsto.re,Apple_API
+- DOMAIN-SUFFIX,apple.co,Apple_API
+- DOMAIN-SUFFIX,itunes.com,Apple_API
+- DOMAIN-SUFFIX,itunes.apple.com,Apple_API
+# > iCloud
+- DOMAIN-SUFFIX,icloud-content.com,Apple_CDN
+- DOMAIN-SUFFIX,me.com,Apple_CDN
 - DOMAIN-SUFFIX,icloud.com,Apple_CDN
 - DOMAIN-SUFFIX,icloud.com.cn,Apple_CDN
-- DOMAIN-SUFFIX,icloud-content.com,Apple_CDN
-- DOMAIN-SUFFIX,itunes.com,Apple_API
-- DOMAIN-SUFFIX,me.com,Apple_API
+- DOMAIN-SUFFIX,apple.com,Apple_CDN
+- DOMAIN-SUFFIX,apple.com.cn,Apple_CDN
+- DOMAIN-SUFFIX,apple-cloudkit.com,Apple_CDN
 # > IP-CIDR
 - IP-CIDR,17.0.0.0/8,Apple_API,no-resolve
 - IP-CIDR,63.92.224.0/19,Apple_API,no-resolve
@@ -1211,6 +1255,8 @@ Rule:
 - DOMAIN-SUFFIX,bamgrid.com,GMedia
 - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,GMedia
 - DOMAIN,cdn.registerdisney.go.com,GMedia
+- DOMAIN,cdn.cdn.unid.go.com,GMedia
+- DOMAIN-SUFFIX,braze.com,GMedia
 - DOMAIN-SUFFIX,conviva.com,GMedia
 - DOMAIN-SUFFIX,disney.demdex.net,GMedia
 # > encoreTVB
@@ -1333,6 +1379,9 @@ Rule:
 - IP-CIDR,23.246.0.0/18,Netflix
 - IP-CIDR,37.77.184.0/21,Netflix
 - IP-CIDR,45.57.0.0/17,Netflix
+- IP-CIDR,52.24.178.0/24,Netflix
+- IP-CIDR,52.35.140.0/24,Netflix
+- IP-CIDR,54.213.167.0/24,Netflix
 - IP-CIDR,64.120.128.0/17,Netflix
 - IP-CIDR,66.197.128.0/17,Netflix
 - IP-CIDR,69.53.224.0/19,Netflix
@@ -1341,9 +1390,13 @@ Rule:
 - IP-CIDR,185.9.188.0/22,Netflix
 - IP-CIDR,192.173.64.0/18,Netflix
 - IP-CIDR,198.38.96.0/19,Netflix
+- IP-CIDR,203.75.84.0/24,Netflix
+- IP-CIDR,203.198.13.0/24,Netflix
+- IP-CIDR,203.198.80.0/24,Netflix
 - IP-CIDR,198.45.48.0/20,Netflix
 - IP-CIDR,207.45.72.0/22,Netflix
 - IP-CIDR,208.75.76.0/22,Netflix
+- IP-CIDR,210.0.153.0/24,Netflix
 # Netflix Area-check prod.cloud.geo.netflix.com
 - IP-CIDR,52.89.124.203/32,Netflix
 - IP-CIDR,54.148.37.5/32,Netflix
@@ -1911,7 +1964,6 @@ Rule:
 - DOMAIN-SUFFIX,target.com,Proxy
 - DOMAIN-SUFFIX,thinkgeek.com,Proxy
 - DOMAIN-SUFFIX,tracfone.com,Proxy
-- DOMAIN-SUFFIX,unity3d.com,Proxy
 - DOMAIN-SUFFIX,uploader.jp,Proxy
 - DOMAIN-SUFFIX,vevo.com,Proxy
 - DOMAIN-SUFFIX,viu.tv,Proxy
@@ -2542,6 +2594,7 @@ Rule:
 - DOMAIN-SUFFIX,myapp.com,Domestic
 - DOMAIN-SUFFIX,myqcloud.com,Domestic
 - DOMAIN-SUFFIX,qq.com,Domestic
+- DOMAIN-SUFFIX,qqmail.com,Domestic
 - DOMAIN-SUFFIX,servicewechat.com,Domestic
 - DOMAIN-SUFFIX,tencent.com,Domestic
 - DOMAIN-SUFFIX,tencent-cloud.net,Domestic
@@ -2741,6 +2794,7 @@ Rule:
 - DOMAIN-SUFFIX,tophub.today,Domestic
 - DOMAIN-SUFFIX,udacity.com,Domestic
 - DOMAIN-SUFFIX,uning.com,Domestic
+- DOMAIN-SUFFIX,unity3d.com,Domestic
 - DOMAIN-SUFFIX,v2ex.com,Domestic
 - DOMAIN-SUFFIX,vmware.com,Domestic
 - DOMAIN-SUFFIX,weather.com,Domestic
