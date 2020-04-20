@@ -1012,6 +1012,7 @@ Rule:
 - DOMAIN,mvod.itunes.apple.com,Apple_CDN
 - DOMAIN,api.smoot.apple.cn,Apple_CDN
 - DOMAIN,streamingaudio.itunes.apple.com,Apple_CDN
+# > iTunes Libraries
 - DOMAIN,audio.itunes.apple.com,Apple_API
 - DOMAIN-SUFFIX,blobstore.apple.com,Apple_API
 - DOMAIN,itunes.apple.com,Apple_API
@@ -1022,7 +1023,7 @@ Rule:
 - DOMAIN,np-edge.itunes.apple.com,GMedia
 - DOMAIN,play-edge.itunes.apple.com,GMedia
 - DOMAIN-SUFFIX,tv.apple.com,GMedia
-# > Apple Map
+# > Apple Map - location service
 - DOMAIN,amap.com,Apple_CDN
 - DOMAIN,gs.apple.com,Apple_CDN
 - DOMAIN,gs-loc.apple.com,Apple_CDN
@@ -1083,12 +1084,12 @@ Rule:
 - DOMAIN,safebrowsing.googleapis.com,DIRECT
 
 # CMedia.list（中国媒体）
-# AcFun
+# > AcFun
 - DOMAIN-SUFFIX,acfun.cn,CMedia
 - DOMAIN-SUFFIX,acfun.com,CMedia
 - DOMAIN-SUFFIX,acfun.tv,CMedia
 - DOMAIN-SUFFIX,aixifan.com,CMedia
-# bilibili
+# > bilibili
 - DOMAIN-KEYWORD,bilibili,CMedia
 - DOMAIN-SUFFIX,acg.tv,CMedia
 - DOMAIN-SUFFIX,acgvideo.com,CMedia
@@ -1103,7 +1104,7 @@ Rule:
 - DOMAIN-SUFFIX,hdslb.com,CMedia
 - DOMAIN-SUFFIX,im9.com,CMedia
 - DOMAIN,upos-hz-mirrorakam.akamaized.net,CMedia
-# iQiyi
+# > iQiyi
 - DOMAIN-SUFFIX,iqiyi.com,CMedia
 - DOMAIN-SUFFIX,iqiyipic.com,CMedia
 - DOMAIN-SUFFIX,qy.net,CMedia
@@ -1111,18 +1112,18 @@ Rule:
 - IP-CIDR,101.227.0.0/16,CMedia,no-resolve
 - IP-CIDR,101.224.0.0/13,CMedia,no-resolve
 - IP-CIDR,119.176.0.0/12,CMedia,no-resolve
-# Kugou & Kuwo
+# > Kugou & Kuwo
 - DOMAIN-SUFFIX,kugou.com,CMedia
 - DOMAIN-SUFFIX,kuwo.cn,CMedia
 - DOMAIN-SUFFIX,koowo.com,CMedia
-# Letv
+# > Letv
 - DOMAIN-SUFFIX,api.mob.app.letv.com,CMedia
 - DOMAIN-SUFFIX,letv.com,CMedia
-# MGTV
+# > MGTV
 - DOMAIN-SUFFIX,hitv.com,CMedia
 - DOMAIN-SUFFIX,hunantv.com,CMedia
 - DOMAIN-SUFFIX,mgtv.com,CMedia
-# NeteaseMusic
+# > NeteaseMusic
 - DOMAIN,apm.music.163.com,CMedia
 - DOMAIN,apm3.music.163.com,CMedia
 - DOMAIN,interface.music.163.com,CMedia
@@ -1149,17 +1150,17 @@ Rule:
 - IP-CIDR,193.112.159.225/32,CMedia
 - IP-CIDR,223.252.199.66/32,CMedia
 - IP-CIDR,223.252.199.67/32,CMedia
-# QQMusic
+# > QQMusic
 - DOMAIN-SUFFIX,*music.qq.com,CMedia
 - DOMAIN-SUFFIX,y.qq.com,CMedia
 - DOMAIN,aqqmusic.tc.qq.com,CMedia
-# Tencent Video
+# > Tencent Video
 - DOMAIN-SUFFIX,v.qq.com,CMedia
 - DOMAIN-SUFFIX,video.qq.com,CMedia
-# Xiami Music
+# > Xiami Music
 - DOMAIN-SUFFIX,xiami.com,CMedia
 - DOMAIN-SUFFIX,xiami.net,CMedia
-# Youku
+# > Youku
 - DOMAIN-SUFFIX,soku.com,CMedia
 - DOMAIN-SUFFIX,youku.com,CMedia
 - DOMAIN-SUFFIX,ykimg.com,CMedia
@@ -1266,6 +1267,7 @@ Rule:
 - DOMAIN,edge.api.brightcove.com,GMedia
 - DOMAIN,bcbolt446c5271-a.akamaihd.net,GMedia
 # > FC2
+- DOMAIN-SUFFIX,fc2.com,JPMedia
 - DOMAIN-KEYWORD,fc2,JPMedia
 # > Fox Now
 - DOMAIN-SUFFIX,fox.com,GMedia
@@ -1320,12 +1322,6 @@ Rule:
 - DOMAIN-SUFFIX,japronx.tv,GMedia
 - DOMAIN-SUFFIX,japronx.net,GMedia
 - DOMAIN-SUFFIX,japronx.vip,GMedia
-# > JOOX
-- DOMAIN-SUFFIX,joox.com,GMedia
-# > KKBOX
-- DOMAIN-SUFFIX,kkbox.com,GMedia
-- DOMAIN-SUFFIX,kkbox.com.tw,GMedia
-- DOMAIN-SUFFIX,kfs.io,GMedia
 # > KKTV
 - DOMAIN-SUFFIX,kktv.me,GMedia
 - DOMAIN-SUFFIX,kktv.com.tw,GMedia
@@ -1345,16 +1341,18 @@ Rule:
 - DOMAIN-SUFFIX,phprcdn.com,GMedia
 - DOMAIN-SUFFIX,pornhub.com,GMedia
 - DOMAIN-SUFFIX,pornhubpremium.com,GMedia
-# > SoundCloud
-- DOMAIN-SUFFIX,sndcdn.com,GMedia
-- DOMAIN-SUFFIX,soundcloud.com,GMedia
 # > ViuTV
+- DOMAIN-SUFFIX,bootstrapcdn.com,GMedia
+- DOMAIN-SUFFIX,cloudfront.net,GMedia
+- DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com,GMedia
+- DOMAIN-SUFFIX,firebaseio.com,GMedia
+- DOMAIN-SUFFIX,jwpcdn.com,GMedia
+- DOMAIN-SUFFIX,jwplayer.com,GMedia
+- DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com,GMedia
+- DOMAIN-SUFFIX,nowe.com,GMedia
 - DOMAIN-SUFFIX,viu.com,GMedia
 - DOMAIN-SUFFIX,viu.tv,GMedia
 - DOMAIN-SUFFIX,viu.now.com,GMedia
-- DOMAIN,d1k2us671qcoau.cloudfront.net,GMedia
-- DOMAIN,d2anahhhmp1ffz.cloudfront.net,GMedia
-- DOMAIN,dfp6rglgjqszk.cloudfront.net,GMedia
 # > Twitch
 - DOMAIN-SUFFIX,twitch.tv,GMedia
 - DOMAIN-SUFFIX,twitchcdn.net,GMedia
@@ -1366,7 +1364,7 @@ Rule:
 - DOMAIN-SUFFIX,youtu.be,GMedia
 - DOMAIN-SUFFIX,youtube.com,GMedia
 - DOMAIN,youtubei.googleapis.com,GMedia
-# Netflix
+# > Netflix
 - DOMAIN,netflix.com.edgesuite.net,Netflix
 - DOMAIN-SUFFIX,netflix.com,Netflix
 - DOMAIN-SUFFIX,netflix.net,Netflix
@@ -1754,6 +1752,7 @@ Rule:
 - DOMAIN-SUFFIX,paltalk.com,Proxy
 - DOMAIN-SUFFIX,pao-pao.net,Proxy
 - DOMAIN-SUFFIX,parsevideo.com,Proxy
+- DOMAIN-SUFFIX,patreon.com,Proxy
 - DOMAIN-SUFFIX,pbxes.com,Proxy
 - DOMAIN-SUFFIX,pcdvd.com.tw,Proxy
 - DOMAIN-SUFFIX,pchome.com.tw,Proxy
@@ -1794,7 +1793,6 @@ Rule:
 - DOMAIN-SUFFIX,shopee.tw,Proxy
 - DOMAIN-SUFFIX,slideshare.net,Proxy
 - DOMAIN-SUFFIX,softfamous.com,Proxy
-- DOMAIN-SUFFIX,soundcloud.com,Proxy
 - DOMAIN-SUFFIX,ssrcloud.org,Proxy
 - DOMAIN-SUFFIX,startpage.com,Proxy
 - DOMAIN-SUFFIX,steamcommunity.com,Proxy
@@ -2085,7 +2083,6 @@ Rule:
 - DOMAIN-SUFFIX,fabric.io,Proxy
 - DOMAIN-SUFFIX,fastly.net,Proxy
 - DOMAIN-SUFFIX,fastmail.com,Proxy
-- DOMAIN-SUFFIX,fc2.com,Proxy
 - DOMAIN-SUFFIX,feedburner.com,Proxy
 - DOMAIN-SUFFIX,feedsportal.com,Proxy
 - DOMAIN-SUFFIX,fiftythree.com,Proxy
