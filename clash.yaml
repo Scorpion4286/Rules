@@ -48,12 +48,12 @@ dns:
     - 119.29.29.29
     - 223.5.5.5
     - 1.2.4.8
-    - tls://dns.rubyfish.cn:853
+    - https://rubyfish.cn/dns-query
      
   fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
     - tls://1.0.0.1:853
     - tls://dns.google:853
-    - tls://dns.rubyfish.cn:853
+    - https://rubyfish.cn/dns-query
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
 
@@ -1402,6 +1402,37 @@ Rule:
 # Fast
 - DOMAIN-SUFFIX,fast.com,Netflix
 
+# Direct.list
+# > Private Tracker
+- DOMAIN-SUFFIX,awesome-hd.me,DIRECT
+- DOMAIN-SUFFIX,broadcasthe.net,DIRECT
+- DOMAIN-SUFFIX,chdbits.co,DIRECT
+- DOMAIN-SUFFIX,classix-unlimited.co.uk,DIRECT
+- DOMAIN-SUFFIX,empornium.me,DIRECT
+- DOMAIN-SUFFIX,gazellegames.net,DIRECT
+- DOMAIN-SUFFIX,hdchina.org,DIRECT
+- DOMAIN-SUFFIX,hdsky.me,DIRECT
+- DOMAIN-SUFFIX,icetorrent.org,DIRECT
+- DOMAIN-SUFFIX,jpopsuki.eu,DIRECT
+- DOMAIN-SUFFIX,keepfrds.com,DIRECT
+- DOMAIN-SUFFIX,madsrevolution.net,DIRECT
+- DOMAIN-SUFFIX,m-team.cc,DIRECT
+- DOMAIN-SUFFIX,nanyangpt.com,DIRECT
+- DOMAIN-SUFFIX,ncore.cc,DIRECT
+- DOMAIN-SUFFIX,open.cd,DIRECT
+- DOMAIN-SUFFIX,ourbits.club,DIRECT
+- DOMAIN-SUFFIX,passthepopcorn.me,DIRECT
+- DOMAIN-SUFFIX,privatehd.to,DIRECT
+- DOMAIN-SUFFIX,redacted.ch,DIRECT
+- DOMAIN-SUFFIX,springsunday.net,DIRECT
+- DOMAIN-SUFFIX,tjupt.org,DIRECT
+- DOMAIN-SUFFIX,totheglory.im,DIRECT
+# > Accelerate direct sites
+- DOMAIN-KEYWORD,announce,DIRECT
+- DOMAIN-KEYWORD,torrent,DIRECT
+- DOMAIN-KEYWORD,tracker,DIRECT
+- DOMAIN-SUFFIX,smtp,DIRECT
+
 # IM.list
 # > Line
 - DOMAIN-SUFFIX,lin.ee,JPMedia
@@ -1412,10 +1443,22 @@ Rule:
 - DOMAIN-SUFFIX,line-scdn.net,JPMedia
 - DOMAIN-SUFFIX,nhncorp.jp,JPMedia
 - DOMAIN-SUFFIX,naver.jp,JPMedia
+- IP-CIDR,103.2.28.0/22,JPMedia,no-resolve
 - IP-CIDR,103.2.30.0/23,JPMedia,no-resolve
+- IP-CIDR,119.235.224.0/21,JPMedia,no-resolve
+- IP-CIDR,119.235.232.0/23,JPMedia,no-resolve
+- IP-CIDR,119.235.235.0/24,JPMedia,no-resolve
+- IP-CIDR,119.235.236.0/23,JPMedia,no-resolve
+- IP-CIDR,125.6.146.0/24,JPMedia,no-resolve
+- IP-CIDR,125.6.149.0/24,JPMedia,no-resolve
+- IP-CIDR,125.6.190.0/24,JPMedia,no-resolve
 - IP-CIDR,125.209.208.0/20,JPMedia,no-resolve
 - IP-CIDR,147.92.128.0/17,JPMedia,no-resolve
+- IP-CIDR,203.104.103.0/24,JPMedia,no-resolve
+- IP-CIDR,203.104.128.0/20,JPMedia,no-resolve
 - IP-CIDR,203.104.144.0/21,JPMedia,no-resolve
+- IP-CIDR,203.174.66.64/26,JPMedia,no-resolve
+- IP-CIDR,203.174.77.0/24,JPMedia,no-resolve
 # Telegram
 - DOMAIN-SUFFIX,t.me,Telegram
 - DOMAIN-SUFFIX,tdesktop.com,Telegram
@@ -1427,7 +1470,6 @@ Rule:
 - IP-CIDR,91.108.16.0/21,Telegram,no-resolve
 - IP-CIDR,91.108.56.0/22,Telegram,no-resolve
 - IP-CIDR,95.161.64.0/20,Telegram,no-resolve
-- IP-CIDR,109.239.140.0/24,Telegram,no-resolve
 - IP-CIDR,149.154.160.0/20,Telegram,no-resolve
 # > Facebook
 - DOMAIN-SUFFIX,cdninstagram.com,Proxy
@@ -1455,6 +1497,21 @@ Rule:
 - IP-CIDR,54.173.34.141/32,Proxy,no-resolve
 - IP-CIDR,54.235.23.242/32,Proxy,no-resolve
 - IP-CIDR,169.45.248.118/32,Proxy,no-resolve
+- IP-CIDR,103.4.96.0/22,Proxy,no-resolve
+- IP-CIDR,129.134.0.0/17,Proxy,no-resolve
+- IP-CIDR,157.240.0.0/17,Proxy,no-resolve
+- IP-CIDR,173.252.64.0/19,Proxy,no-resolve
+- IP-CIDR,173.252.96.0/19,Proxy,no-resolve
+- IP-CIDR,179.60.192.0/22,Proxy,no-resolve
+- IP-CIDR,185.60.216.0/22,Proxy,no-resolve
+- IP-CIDR,204.15.20.0/22,Proxy,no-resolve
+- IP-CIDR,31.13.24.0/21,Proxy,no-resolve
+- IP-CIDR,31.13.64.0/18,Proxy,no-resolve
+- IP-CIDR,45.64.40.0/22,Proxy,no-resolve
+- IP-CIDR,66.220.144.0/20,Proxy,no-resolve
+- IP-CIDR,69.171.224.0/19,Proxy,no-resolve
+- IP-CIDR,69.63.176.0/20,Proxy,no-resolve
+- IP-CIDR,74.119.76.0/22,Proxy,no-resolve
 # > Twitter
 - DOMAIN-SUFFIX,pscp.tv,Proxy
 - DOMAIN-SUFFIX,periscope.tv,Proxy
@@ -2395,8 +2452,6 @@ Rule:
 - DOMAIN-SUFFIX,wikileaks-forum.com,Proxy
 - DOMAIN-SUFFIX,wikimedia.org,Proxy
 - DOMAIN-SUFFIX,wikipedia.com,Proxy
-- DOMAIN-SUFFIX,windows.com,Proxy
-- DOMAIN-SUFFIX,windows.net,Proxy
 - DOMAIN-SUFFIX,workflowy.com,Proxy
 - DOMAIN-SUFFIX,wow.com,Proxy
 - DOMAIN-SUFFIX,wp.com,Proxy
@@ -2979,41 +3034,28 @@ Rule:
 - DOMAIN-SUFFIX,zgslb.net,Domestic
 - DOMAIN-SUFFIX,zmz002.com,Domestic
 - IP-CIDR,1.255.62.0/24,Domestic
-# > Private Tracker
-- DOMAIN-SUFFIX,awesome-hd.me,Domestic
-- DOMAIN-SUFFIX,classix-unlimited.co.uk,Domestic
-- DOMAIN-SUFFIX,empornium.me,Domestic
-- DOMAIN-SUFFIX,gazellegames.net,Domestic
-- DOMAIN-SUFFIX,hdbits.org,Domestic
-- DOMAIN-SUFFIX,hdhome.org,Domestic
-- DOMAIN-SUFFIX,hdsky.me,Domestic
-- DOMAIN-SUFFIX,icetorrent.org,Domestic
-- DOMAIN-SUFFIX,jpopsuki.eu,Domestic
-- DOMAIN-SUFFIX,keepfrds.com,Domestic
-- DOMAIN-SUFFIX,m-team.cc,Domestic
-- DOMAIN-SUFFIX,morethan.tv,Domestic
-- DOMAIN-SUFFIX,nanyangpt.com,Domestic
-- DOMAIN-SUFFIX,ncore.cc,Domestic
-- DOMAIN-SUFFIX,open.cd,Domestic
-- DOMAIN-SUFFIX,pterclub.com,Domestic
-- DOMAIN-SUFFIX,springsunday.net,Domestic
-- DOMAIN-SUFFIX,tjupt.org,Domestic
-# > Accelerate Domestic sites
-- DOMAIN-KEYWORD,announce,Domestic
-- DOMAIN-KEYWORD,torrent,Domestic
-- DOMAIN-KEYWORD,tracker,Domestic
-- DOMAIN-SUFFIX,smtp,Domestic
 # > CN
 - DOMAIN-SUFFIX,cn,Domestic
+- DOMAIN-SUFFIX,xn--fiqs8s,Domestic
+- GEOIP,CN,Domestic
 
-# LAN
+# > LAN
+- DOMAIN,localhost,DIRECT
 - DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,0.0.0.0/8,DIRECT
 - IP-CIDR,10.0.0.0/8,DIRECT
 - IP-CIDR,17.0.0.0/8,DIRECT
 - IP-CIDR,100.64.0.0/10,DIRECT
 - IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,169.254.0.0/16,DIRECT
 - IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,192.0.2.0/24,DIRECT
 - IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,198.18.0.0/15,DIRECT
+- IP-CIDR,198.51.100.0/24,DIRECT
+- IP-CIDR,203.0.113.0/24,DIRECT
+- IP-CIDR,224.0.0.0/4,DIRECT
+- IP-CIDR,240.0.0.0/4,DIRECT
+
 # 最终规则
-- GEOIP,CN,Domestic
 - MATCH,Others

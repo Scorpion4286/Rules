@@ -1,5 +1,5 @@
 ### My Rules
-Clash(X) Rules for myself
+Clash(X) & Surge Rules for myself
 
 # 鸣谢
 * [lhie1](https://github.com/lhie1/Rules/tree/master)
