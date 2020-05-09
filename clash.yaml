@@ -600,7 +600,6 @@ Rule:
 # > Alibaba
 - DOMAIN,optimus-ads.amap.com,Hijacking
 - DOMAIN,optimus-ads.amap.com.w.alikunlun.com,Hijacking
-- DOMAIN,tunion-api.m.taobao.com,Hijacking
 - IP-CIDR,112.29.211.120/32,Hijacking,no-resolve
 # > Apple
 - DOMAIN-SUFFIX,ads.internal.unity3d.com,Hijacking
@@ -836,9 +835,6 @@ Rule:
 # > ZOL
 - DOMAIN,apppv.zol.com.cn,Hijacking
 - DOMAIN,pvnapp.zol.com.cn,Hijacking
-# > 字节跳动
-- DOMAIN,sf3-ttcdn-tos.pstatp.com,Hijacking
-- DOMAIN,sf6-ttcdn-tos.pstatp.com,Hijacking
 # > 知到
 - DOMAIN,app-advertise.zhihuishu.com,Hijacking
 # > IP-CIDR
@@ -971,7 +967,6 @@ Rule:
 - IP-CIDR,74.117.182.77/32,Hijacking,no-resolve
 - IP-CIDR,78.140.131.214/32,Hijacking,no-resolve
 
-
 # Apple.list
 # > Cert
 - DOMAIN,ocsp.apple.com,Apple_API
@@ -993,6 +988,7 @@ Rule:
 - DOMAIN-KEYWORD,buy.itunes.apple.com,Apple_API
 # > Trailer
 - DOMAIN-SUFFIX,hls.itunes.apple.com,Apple_API
+- DOMAIN-SUFFIX,books.itunes.apple.com,Apple_API
 # > Update
 - DOMAIN,supportdownload.apple.com,Apple_CDN
 - DOMAIN,appldnld.apple.com,Apple_CDN
@@ -1000,12 +996,14 @@ Rule:
 - DOMAIN,apptrailers.itunes.apple.com,Apple_CDN
 - DOMAIN,updates-http.cdn-apple.com,Apple_CDN
 # > App Store
+- DOMAIN-SUFFIX,appsto.re,Apple_API
 - DOMAIN-SUFFIX,mzstatic.com,Apple_CDN
 - DOMAIN,iosapps.itunes.apple.com,Apple_CDN
 - DOMAIN,osxapps.itunes.apple.com,Apple_CDN
 - DOMAIN,beta.itunes.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,apps.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,appstore.com,Apple_CDN
+- DOMAIN,testflight.apple.com,Apple_CDN
 # > Apple Music
 - DOMAIN-SUFFIX,music.apple.com,Apple_CDN
 - DOMAIN,aod.itunes.apple.com,Apple_CDN
@@ -1042,6 +1040,8 @@ Rule:
 - DOMAIN,devstreaming-cdn.apple.com,Apple_API
 - DOMAIN,js-cdn.music.apple.com,Apple_API
 # > Reserve
+- DOMAIN,api-glb-sea.smoot.apple.com,Apple_API
+- DOMAIN,lookup-api.apple.com,Apple_API
 - DOMAIN,reserve-prime.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,ess.apple.com,Apple_CDN
 - DOMAIN-SUFFIX,push.apple.com,Apple_CDN
@@ -1089,6 +1089,8 @@ Rule:
 - DOMAIN-SUFFIX,acfun.com,CMedia
 - DOMAIN-SUFFIX,acfun.tv,CMedia
 - DOMAIN-SUFFIX,aixifan.com,CMedia
+- DOMAIN-SUFFIX,adnmb.com,CMedia
+- DOMAIN-SUFFIX,adnmb2.com,CMedia
 # > bilibili
 - DOMAIN-KEYWORD,bilibili,CMedia
 - DOMAIN-SUFFIX,acg.tv,CMedia
@@ -1186,11 +1188,9 @@ Rule:
 # > Spotify
 - DOMAIN-SUFFIX,pscdn.co,JPMedia
 - DOMAIN-SUFFIX,scdn.co,JPMedia
-- DOMAIN-SUFFIX,spotify.com,JPMedia
 - DOMAIN-SUFFIX,spoti.fi,JPMedia
 - DOMAIN-KEYWORD,spotify.com,JPMedia
 - DOMAIN-KEYWORD,-spotify-com,JPMedia
-- DOMAIN-KEYWORD,spotify,JPMedia
 # > TIDAL
 - DOMAIN-SUFFIX,tidal.com,GMedia
 # (Video)
@@ -1235,10 +1235,8 @@ Rule:
 - DOMAIN-SUFFIX,bbc.co,GMedia
 - DOMAIN-SUFFIX,bbc.co.uk,GMedia
 - DOMAIN-SUFFIX,bbci.co.uk,GMedia
-- DOMAIN,vod-dash-uk-live.akamaized.net,GMedia
-- DOMAIN,vod-thumb-uk-live.akamaized.net,GMedia
-- DOMAIN,vod-dash-uk-live.bbcfmt.hs.llnwd.net,GMedia
-- DOMAIN,vod-thumb-uk-live.bbcfmt.hs.llnwd.net,GMedia
+- DOMAIN-KEYWORD,bbcfmt,GMedia
+- DOMAIN-KEYWORD,uk-live,GMedia
 # > DAZN
 - DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net,GMedia
 - DOMAIN-SUFFIX,dazn.com,GMedia
@@ -1267,6 +1265,8 @@ Rule:
 - DOMAIN,edge.api.brightcove.com,GMedia
 - DOMAIN,bcbolt446c5271-a.akamaihd.net,GMedia
 # > FC2
+- DOMAIN-SUFFIX,livechatfc2.com,JPMedia
+- DOMAIN-SUFFIX,fc2id.com,JPMedia
 - DOMAIN-SUFFIX,fc2.com,JPMedia
 - DOMAIN-KEYWORD,fc2,JPMedia
 # > Fox Now
@@ -1280,6 +1280,7 @@ Rule:
 - DOMAIN-SUFFIX,hbo.com,GMedia
 - DOMAIN-SUFFIX,hbogo.com,GMedia
 - DOMAIN-SUFFIX,hbonow.com,GMedia
+- DOMAIN-SUFFIX,hbomax.com,GMedia
 # > HBO GO HKG
 - DOMAIN-SUFFIX,hbogoasia.com,GMedia
 - DOMAIN-SUFFIX,hbogoasia.hk,GMedia
@@ -1306,11 +1307,10 @@ Rule:
 - DOMAIN-SUFFIX,hulu.com,GMedia
 - DOMAIN-SUFFIX,huluim.com,GMedia
 - DOMAIN-SUFFIX,hulustream.com,GMedia
-# > niconico
-- DOMAIN-SUFFIX,dmc.nico,JPMedia
-- DOMAIN-SUFFIX,nicovideo.jp,JPMedia
-- DOMAIN-SUFFIX,nimg.jp,JPMedia
-- DOMAIN-SUFFIX,socdm.com,JPMedia
+# > ITV
+- DOMAIN-SUFFIX,itv.com,GMedia
+- DOMAIN-SUFFIX,itvstatic.com,GMedia
+- DOMAIN,itvpnpmobile-a.akamaihd.net,GMedia
 # > Japonx
 - DOMAIN-KEYWORD,japonx,GMedia
 - DOMAIN-KEYWORD,japronx,GMedia
@@ -1329,9 +1329,21 @@ Rule:
 # > Line TV
 - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net,GMedia
 - DOMAIN-SUFFIX,linetv.tw,GMedia
+# > LiTV
+- DOMAIN-SUFFIX,litv.tv,GMedia
+- DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,GMedia
+# > My5
+- DOMAIN-SUFFIX,channel5.com,GMedia
+- DOMAIN-SUFFIX,my5.tv,GMedia
+- DOMAIN,d349g9zuie06uo.cloudfront.net,GMedia
 # > myTV_SUPER
 - DOMAIN-SUFFIX,mytvsuper.com,GMedia
 - DOMAIN-SUFFIX,tvb.com,GMedia
+# > niconico
+- DOMAIN-SUFFIX,dmc.nico,JPMedia
+- DOMAIN-SUFFIX,nicovideo.jp,JPMedia
+- DOMAIN-SUFFIX,nimg.jp,JPMedia
+- DOMAIN-SUFFIX,socdm.com,JPMedia
 # > Pandora
 - DOMAIN-SUFFIX,pandora.com,GMedia
 # > PBS
@@ -1341,6 +1353,14 @@ Rule:
 - DOMAIN-SUFFIX,phprcdn.com,GMedia
 - DOMAIN-SUFFIX,pornhub.com,GMedia
 - DOMAIN-SUFFIX,pornhubpremium.com,GMedia
+# > 台湾好
+- DOMAIN-SUFFIX,skyking.com.tw,GMedia
+- DOMAIN,hamifans.emome.net,GMedia
+# > Twitch
+- DOMAIN-SUFFIX,twitch.tv,GMedia
+- DOMAIN-SUFFIX,twitchcdn.net,GMedia
+- DOMAIN-SUFFIX,ttvnw.net,GMedia
+- DOMAIN-SUFFIX,jtvnw.net,GMedia
 # > ViuTV
 - DOMAIN-SUFFIX,bootstrapcdn.com,GMedia
 - DOMAIN-SUFFIX,cloudfront.net,GMedia
@@ -1353,11 +1373,6 @@ Rule:
 - DOMAIN-SUFFIX,viu.com,GMedia
 - DOMAIN-SUFFIX,viu.tv,GMedia
 - DOMAIN-SUFFIX,viu.now.com,GMedia
-# > Twitch
-- DOMAIN-SUFFIX,twitch.tv,GMedia
-- DOMAIN-SUFFIX,twitchcdn.net,GMedia
-- DOMAIN-SUFFIX,ttvnw.net,GMedia
-- DOMAIN-SUFFIX,jtvnw.net,GMedia
 # > Youtube
 - DOMAIN-SUFFIX,googlevideo.com,GMedia
 - DOMAIN-SUFFIX,gvt2.com,GMedia
@@ -1387,6 +1402,7 @@ Rule:
 - IP-CIDR,185.2.220.0/22,Netflix
 - IP-CIDR,185.9.188.0/22,Netflix
 - IP-CIDR,192.173.64.0/18,Netflix
+- IP-CIDR,198.38.96.0/19,Netflix
 - IP-CIDR,198.38.96.0/19,Netflix
 - IP-CIDR,203.75.84.0/24,Netflix
 - IP-CIDR,203.198.13.0/24,Netflix
@@ -1488,6 +1504,8 @@ Rule:
 - DOMAIN-SUFFIX,whatsapp.com,Proxy
 - DOMAIN-SUFFIX,whatsapp.net,Proxy
 - DOMAIN-KEYWORD,facebook,Proxy
+- DOMAIN-KEYWORD,instagram,Proxy
+- DOMAIN-KEYWORD,whatsapp,Proxy
 - IP-CIDR,3.123.36.126/32,Proxy,no-resolve
 - IP-CIDR,35.157.215.84/32,Proxy,no-resolve
 - IP-CIDR,35.157.217.255/32,Proxy,no-resolve
@@ -1969,6 +1987,7 @@ Rule:
 - DOMAIN-SUFFIX,sparknotes.com,Proxy
 - DOMAIN-SUFFIX,streetvoice.com,Proxy
 - DOMAIN-SUFFIX,supertop.co,Proxy
+- DOMAIN-SUFFIX,tinyurl.com,Proxy
 - DOMAIN-SUFFIX,tv.com,Proxy
 - DOMAIN-SUFFIX,typepad.com,Proxy
 - DOMAIN-SUFFIX,udnbkk.com,Proxy
@@ -1979,6 +1998,9 @@ Rule:
 - DOMAIN-SUFFIX,wolframalpha.com,Proxy
 - DOMAIN-SUFFIX,x-art.com,Proxy
 - DOMAIN-SUFFIX,yimg.com,Proxy
+- DOMAIN-SUFFIX,globalvoices.org,Proxy
+- DOMAIN-SUFFIX,redditstatic.com,Proxy
+- DOMAIN-SUFFIX,wikimedia.org,Proxy
 # (Region-Restricted Access Denied)
 - DOMAIN-SUFFIX,apartmentratings.com,Proxy
 - DOMAIN-SUFFIX,apartments.com,Proxy
@@ -2026,6 +2048,7 @@ Rule:
 - DOMAIN-SUFFIX,vsco.co,Proxy
 - DOMAIN-SUFFIX,xfinity.com,Proxy
 - DOMAIN-SUFFIX,zattoo.com,Proxy
+- DOMAIN-SUFFIX,unity3d.com,Proxy
 # > Top blocked sites
 - DOMAIN-SUFFIX,2o7.net,Proxy
 - DOMAIN-SUFFIX,4everProxy.com,Proxy
@@ -2045,7 +2068,6 @@ Rule:
 - DOMAIN-SUFFIX,amazonaws.com,Proxy
 - DOMAIN-SUFFIX,ampproject.com,Proxy
 - DOMAIN-SUFFIX,ampproject.net,Proxy
-- DOMAIN-SUFFIX,ampproject.org,Proxy
 - DOMAIN-SUFFIX,anaconda.com,Proxy
 - DOMAIN-SUFFIX,ancsconf.org,Proxy
 - DOMAIN-SUFFIX,android-x86.org,Proxy
@@ -2081,7 +2103,6 @@ Rule:
 - DOMAIN-SUFFIX,bkrtx.com,Proxy
 - DOMAIN-SUFFIX,blog.com,Proxy
 - DOMAIN-SUFFIX,blogcdn.com,Proxy
-- DOMAIN-SUFFIX,blogger.com,Proxy
 - DOMAIN-SUFFIX,blogsmithmedia.com,Proxy
 - DOMAIN-SUFFIX,blogspot.hk,Proxy
 - DOMAIN-SUFFIX,boomtrain.com,Proxy
@@ -2173,8 +2194,6 @@ Rule:
 - DOMAIN-SUFFIX,gravatar.com,Proxy
 - DOMAIN-SUFFIX,gstatic.cn,Proxy
 - DOMAIN-SUFFIX,gunsamerica.com,Proxy
-- DOMAIN-SUFFIX,gvt0.com,Proxy
-- DOMAIN-SUFFIX,gvt1.com,Proxy
 - DOMAIN-SUFFIX,helpshift.com,Proxy
 - DOMAIN-SUFFIX,hinet.net,Proxy
 - DOMAIN-SUFFIX,hockeyapp.net,Proxy
@@ -2313,7 +2332,7 @@ Rule:
 - DOMAIN-SUFFIX,slack.com,Proxy
 - DOMAIN-SUFFIX,slack-edge.com,Proxy
 - DOMAIN-SUFFIX,slack-msgs.com,Proxy
-- DOMAIN-SUFFIX,smartdnsproxy.com,Proxy
+- DOMAIN-SUFFIX,smartdnsProxy.com,Proxy
 - DOMAIN-SUFFIX,smh.com.au,Proxy
 - DOMAIN-SUFFIX,snapchat.com,Proxy
 - DOMAIN-SUFFIX,sndcdn.com,Proxy
@@ -2370,6 +2389,7 @@ Rule:
 - DOMAIN-SUFFIX,torrentprivacy.com,Proxy
 - DOMAIN-SUFFIX,torrentproject.se,Proxy
 - DOMAIN-SUFFIX,torrentz.eu,Proxy
+- DOMAIN-SUFFIX,tradingview.com,Proxy
 - DOMAIN-SUFFIX,traffichaus.com,Proxy
 - DOMAIN-SUFFIX,trakt.tv,Proxy
 - DOMAIN-SUFFIX,transparency.org,Proxy
@@ -2450,7 +2470,6 @@ Rule:
 - DOMAIN-SUFFIX,wikileaks.info,Proxy
 - DOMAIN-SUFFIX,wikileaks.org,Proxy
 - DOMAIN-SUFFIX,wikileaks-forum.com,Proxy
-- DOMAIN-SUFFIX,wikimedia.org,Proxy
 - DOMAIN-SUFFIX,wikipedia.com,Proxy
 - DOMAIN-SUFFIX,workflowy.com,Proxy
 - DOMAIN-SUFFIX,wow.com,Proxy
@@ -2481,15 +2500,10 @@ Rule:
 # > Force some domains which are fucked by GFW while resolving DNS,or do not respect the system Proxy
 - DOMAIN-KEYWORD,Appledaily,Proxy
 - DOMAIN-KEYWORD,beetalk,Proxy
-- DOMAIN-KEYWORD,blogspot,Proxy
 - DOMAIN-KEYWORD,dropbox,Proxy
-- DOMAIN-KEYWORD,instagram,Proxy
-- DOMAIN-KEYWORD,whatsapp,Proxy
-- DOMAIN-KEYWORD,google,Proxy
 - DOMAIN-SUFFIX,1e100.net,Proxy
 - DOMAIN-SUFFIX,2mdn.net,Proxy
 - DOMAIN-SUFFIX,akamai.net,Proxy
-- DOMAIN-SUFFIX,appspot.com,Proxy
 - DOMAIN-SUFFIX,blogblog.com,Proxy
 - DOMAIN-SUFFIX,crittercism.com,Proxy
 - DOMAIN-SUFFIX,culturalspot.org,Proxy
@@ -2504,6 +2518,7 @@ Rule:
 - DOMAIN-SUFFIX,scdn.co,Proxy
 - DOMAIN-SUFFIX,toggleable.com,Proxy
 - DOMAIN-SUFFIX,unfiltered.news,Proxy
+
 
 # Domestic.list
 # China Area Network
