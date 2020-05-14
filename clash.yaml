@@ -1349,8 +1349,8 @@ Rule:
 # > PBS
 - DOMAIN-SUFFIX,pbs.org,GMedia
 # > Pornhub
-- DOMAIN-SUFFIX,phncdn.com,GMedia
-- DOMAIN-SUFFIX,phprcdn.com,GMedia
+- DOMAIN-KEYWORD,phncdn.com,GMedia
+- DOMAIN-KEYWORD,phprcdn.com,GMedia
 - DOMAIN-SUFFIX,pornhub.com,GMedia
 - DOMAIN-SUFFIX,pornhubpremium.com,GMedia
 # > 台湾好
@@ -1600,23 +1600,33 @@ Rule:
 - DOMAIN-SUFFIX,yt.be,Proxy
 - DOMAIN-SUFFIX,ytimg.com,Proxy
 # > Microsoft
-- DOMAIN-KEYWORD,microsoft,Proxy
 - DOMAIN-KEYWORD,onedrive,Proxy
 - DOMAIN-SUFFIX,azure.com,Proxy
+- DOMAIN-SUFFIX,fabric.io,Proxy
+- DOMAIN-SUFFIX,files.1drv.com,Proxy
 - DOMAIN-SUFFIX,live.com,Proxy
 - DOMAIN-SUFFIX,live.net,Proxy
+- DOMAIN-SUFFIX,livefilestore.com,Proxy
+- DOMAIN-SUFFIX,mesh.com,Proxy
+- DOMAIN-SUFFIX,microsoft.com,Proxy
+- DOMAIN-SUFFIX,microsoftonline.com,Proxy
+- DOMAIN-SUFFIX,microsoft-tst.com,Proxy
+- DOMAIN-SUFFIX,msn.com,Proxy
 - DOMAIN-SUFFIX,office.com,Proxy
 - DOMAIN-SUFFIX,office.net,Proxy
+- DOMAIN-SUFFIX,onedrive.com,Proxy
+- DOMAIN-SUFFIX,sharepoint.com,Proxy
 - DOMAIN-SUFFIX,skype.com,Proxy
 - DOMAIN-SUFFIX,xboxlive.com,Proxy
 - DOMAIN-SUFFIX,1drv.com,Proxy
 - DOMAIN-SUFFIX,1drv.ms,Proxy
 - DOMAIN-SUFFIX,blob.core.windows.net,Proxy
 - DOMAIN-SUFFIX,livefilestore.com,Proxy
-- DOMAIN-SUFFIX,onedrive.com,Proxy
 - DOMAIN-SUFFIX,storage.live.com,Proxy
 - DOMAIN-SUFFIX,storage.msn.com,Proxy
+- DOMAIN-SUFFIX,spoprod-a.akamaihd.net,Proxy
 - DOMAIN,oneclient.sfx.ms,Proxy
+- DOMAIN,p.sfx.ms,Proxy
 # > PayPal
 - DOMAIN-SUFFIX,paypal.com,Proxy
 - DOMAIN-SUFFIX,paypalobjects.com,Proxy
@@ -2618,9 +2628,7 @@ Rule:
 # > Microsoft
 - DOMAIN-SUFFIX,azure.cn,Domestic
 - DOMAIN-SUFFIX,hotmail.com,Domestic
-- DOMAIN-SUFFIX,msn.com,Domestic
 - DOMAIN-SUFFIX,outlook.com,Domestic
-- DOMAIN-SUFFIX,sharepoint.com,Domestic
 - DOMAIN-SUFFIX,windows.com,Domestic
 - DOMAIN-SUFFIX,windows.net,Domestic
 - DOMAIN-SUFFIX,windowsupdate.com,Domestic
@@ -2653,6 +2661,7 @@ Rule:
 - DOMAIN-SUFFIX,steamcontent.com,Domestic
 - DOMAIN-SUFFIX,steamstatic.com,Domestic
 - DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,Domestic
+- DOMAIN-SUFFIX,pinyuncloud.com,DIRECT
 - DOMAIN-SUFFIX,steamstat.us,Domestic
 # > Tencent
 - DOMAIN-SUFFIX,gtimg.com,Domestic
@@ -2667,6 +2676,7 @@ Rule:
 - DOMAIN-SUFFIX,tencent-cloud.net,Domestic
 - DOMAIN-SUFFIX,tenpay.com,Domestic
 - DOMAIN,file-igamecj.akamaized.net,Domestic
+- IP-CIDR,182.254.116.0/24,Domestic
 # > ulike
 - DOMAIN-SUFFIX,byteoversea.com,Domestic
 - DOMAIN-SUFFIX,faceu.mobi,Domestic
