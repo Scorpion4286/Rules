@@ -16,7 +16,6 @@ HOST,beta.itunes.apple.com,Apple_CDN
 HOST-SUFFIX,apps.apple.com,Apple_CDN
 HOST-SUFFIX,appstore.com,Apple_CDN
 USER-AGENT,cloudd*,Apple_CDN
-AND,((NOT,((USER-AGENT,*com.apple.WebKit*))),(USER-AGENT,*com.apple.*)),Apple_CDN
 # > Apple Music
 HOST-SUFFIX,music.apple.com,Apple_CDN
 HOST,aod.itunes.apple.com,Apple_CDN

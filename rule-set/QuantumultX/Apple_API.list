@@ -32,7 +32,7 @@ HOST,np-edge.itunes.apple.com,Apple_API
 HOST,play-edge.itunes.apple.com,Apple_API
 HOST-SUFFIX,tv.apple.com,Apple_API
 # > Apple News
-USER-AGENT,AppleNews*
+USER-AGENT,AppleNews*,Apple_API
 HOST,news-events.apple.com,Apple_API
 HOST,news-edge.apple.com,Apple_API
 HOST,apple.comscoreresearch.com,Apple_API
