@@ -1055,6 +1055,7 @@ Rule:
 - DOMAIN-SUFFIX,adnmb.com,CMedia
 - DOMAIN-SUFFIX,adnmb2.com,CMedia
 # > bilibili
+- DOMAIN,upos-hz-mirrorakam.akamaized.net,CMedia
 - DOMAIN-KEYWORD,bilibili,CMedia
 - DOMAIN-SUFFIX,acg.tv,CMedia
 - DOMAIN-SUFFIX,acgvideo.com,CMedia
@@ -1069,7 +1070,6 @@ Rule:
 - DOMAIN-SUFFIX,hdslb.com,CMedia
 - DOMAIN-SUFFIX,im9.com,CMedia
 - DOMAIN-SUFFIX,smtcdns.net,CMedia
-- DOMAIN,upos-hz-mirrorakam.akamaized.net,CMedia
 # > iQiyi
 - DOMAIN-SUFFIX,iqiyi.com,CMedia
 - DOMAIN-SUFFIX,iqiyipic.com,CMedia
@@ -1192,7 +1192,7 @@ Rule:
 # > Bahamut
 - DOMAIN-SUFFIX,bahamut.com.tw,GMedia
 - DOMAIN-SUFFIX,gamer.com.tw,GMedia
-- DOMAIN-SUFFIX,hinet.net,GMedia
+- DOMAIN-SUFFIX,hitun.io,GMedia
 - DOMAIN,gamer-cds.cdn.hinet.net,GMedia
 - DOMAIN,gamer2-cds.cdn.hinet.net,GMedia
 # > BBC iPlayer
@@ -1340,6 +1340,7 @@ Rule:
 - DOMAIN-SUFFIX,viu.tv,GMedia
 - DOMAIN-SUFFIX,viu.now.com,GMedia
 # > Youtube
+- DOMAIN-SUFFIX,app-measurement.com,GMedia
 - DOMAIN-SUFFIX,gvt2.com,GMedia
 - DOMAIN-SUFFIX,youtu.be,GMedia
 - DOMAIN-SUFFIX,youtube.com,GMedia
@@ -1414,7 +1415,6 @@ Rule:
 # > Accelerate direct sites
 - DOMAIN-KEYWORD,announce,DIRECT
 - DOMAIN-KEYWORD,torrent,DIRECT
-- DOMAIN-KEYWORD,tracker,DIRECT
 - DOMAIN-SUFFIX,smtp,DIRECT
 
 # IM.list
@@ -2235,6 +2235,7 @@ Rule:
 - DOMAIN-SUFFIX,gunsamerica.com,Proxy
 - DOMAIN-SUFFIX,helpshift.com,Proxy
 - DOMAIN-SUFFIX,hinet.net,Proxy
+- DOMAIN-SUFFIX,hitun.io,Proxy
 - DOMAIN-SUFFIX,hockeyapp.net,Proxy
 - DOMAIN-SUFFIX,homedepot.com,Proxy
 - DOMAIN-SUFFIX,howtoforge.com,Proxy
@@ -2743,6 +2744,7 @@ Rule:
 # > SpeedTest
 - DOMAIN-KEYWORD,speedtest,DIRECT
 - DOMAIN-SUFFIX,ooklaserver.net,DIRECT
+- DOMAIN-SUFFIX,speed.cloudflare.com,DIRECT
 # > Prior
 - DOMAIN,client.amplifi.com,DIRECT
 - DOMAIN,ip.bjango.com,DIRECT
@@ -2959,6 +2961,8 @@ Rule:
 - DOMAIN-SUFFIX,lxdns.com,DIRECT
 - DOMAIN-SUFFIX,mai.tn,DIRECT
 - DOMAIN-SUFFIX,meizu.com,DIRECT
+- DOMAIN-SUFFIX,metatrader4.com,DIRECT
+- DOMAIN-SUFFIX,metatrader5.com,DIRECT
 - DOMAIN-SUFFIX,mi.com,DIRECT
 - DOMAIN-SUFFIX,miaopai.com,DIRECT
 - DOMAIN-SUFFIX,mob.com,DIRECT
