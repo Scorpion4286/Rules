@@ -36,7 +36,7 @@ USER-AGENT,AppleNews*,Apple_API
 HOST,news-events.apple.com,Apple_API
 HOST,news-edge.apple.com,Apple_API
 HOST,apple.comscoreresearch.com,Apple_API
-HOST-SUFFIX,apple.news
+HOST-SUFFIX,apple.news,Apple_API
 # > Developer
 HOST,devimages-cdn.apple.com,Apple_API
 HOST,devstreaming-cdn.apple.com,Apple_API
