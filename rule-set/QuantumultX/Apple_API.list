@@ -1,59 +1,59 @@
 # Apple_API.list
 
 # > Cert
-HOST,ocsp.apple.com
-HOST-SUFFIX,digicert.com
-HOST-SUFFIX,entrust.net
-HOST,ocsp.verisign.net
+HOST,ocsp.apple.com,Apple_API
+HOST-SUFFIX,digicert.com,Apple_API
+HOST-SUFFIX,entrust.net,Apple_API
+HOST,ocsp.verisign.net,Apple_API
 # > High-level API
-HOST,api.apps.apple.com
-HOST,apps.apple.com
-HOST,xp.apple.com
-HOST,bag.itunes.apple.com
-HOST,api-edge.apps.apple.com
-HOST,play.itunes.apple.com
-HOST,se.itunes.apple.com
-HOST,se-edge.itunes.apple.com
-HOST,su.itunes.apple.com
-HOST,upp.itunes.apple.com
-HOST,beta.music.apple.com
-HOST-KEYWORD,buy.itunes.apple.com
+HOST,api.apps.apple.com,Apple_API
+HOST,apps.apple.com,Apple_API
+HOST,xp.apple.com,Apple_API
+HOST,bag.itunes.apple.com,Apple_API
+HOST,api-edge.apps.apple.com,Apple_API
+HOST,play.itunes.apple.com,Apple_API
+HOST,se.itunes.apple.com,Apple_API
+HOST,se-edge.itunes.apple.com,Apple_API
+HOST,su.itunes.apple.com,Apple_API
+HOST,upp.itunes.apple.com,Apple_API
+HOST,beta.music.apple.com,Apple_API
+HOST-KEYWORD,buy.itunes.apple.com,Apple_API
 # > Trailer
-HOST-SUFFIX,hls.itunes.apple.com
+HOST-SUFFIX,hls.itunes.apple.com,Apple_API
 # > iTunes Libraries
-HOST,audio.itunes.apple.com
-HOST-SUFFIX,blobstore.apple.com
-HOST,itunes.apple.com
+HOST,audio.itunes.apple.com,Apple_API
+HOST-SUFFIX,blobstore.apple.com,Apple_API
+HOST,itunes.apple.com,Apple_API
 # > iTunes Stream
-HOST-SUFFIX,hls-amt.itunes.apple.com
-HOST-SUFFIX,audio-ssl.itunes.apple.com
+HOST-SUFFIX,hls-amt.itunes.apple.com,Apple_API
+HOST-SUFFIX,audio-ssl.itunes.apple.com,Apple_API
 # > Apple TV
-HOST,np-edge.itunes.apple.com
-HOST,play-edge.itunes.apple.com
-HOST-SUFFIX,tv.apple.com
+HOST,np-edge.itunes.apple.com,Apple_API
+HOST,play-edge.itunes.apple.com,Apple_API
+HOST-SUFFIX,tv.apple.com,Apple_API
 # > Apple News
 USER-AGENT,AppleNews*
-HOST,news-events.apple.com
-HOST,news-edge.apple.com
-HOST,apple.comscoreresearch.com
+HOST,news-events.apple.com,Apple_API
+HOST,news-edge.apple.com,Apple_API
+HOST,apple.comscoreresearch.com,Apple_API
 HOST-SUFFIX,apple.news
 # > Developer
-HOST,devimages-cdn.apple.com
-HOST,devstreaming-cdn.apple.com
-HOST,js-cdn.music.apple.com
+HOST,devimages-cdn.apple.com,Apple_API
+HOST,devstreaming-cdn.apple.com,Apple_API
+HOST,js-cdn.music.apple.com,Apple_API
 # > Others
-HOST-SUFFIX,appsto.re
-HOST-SUFFIX,apple.co
-HOST-SUFFIX,itunes.com
-HOST-SUFFIX,itunes.apple.com
+HOST-SUFFIX,appsto.re,Apple_API
+HOST-SUFFIX,apple.co,Apple_API
+HOST-SUFFIX,itunes.com,Apple_API
+HOST-SUFFIX,itunes.apple.com,Apple_API
 # > IP-CIDR
-IP-CIDR,17.0.0.0/8
-IP-CIDR,63.92.224.0/19
-IP-CIDR,65.199.22.0/23
-IP-CIDR,139.178.128.0/18
-IP-CIDR,144.178.0.0/19
-IP-CIDR,144.178.36.0/22
-IP-CIDR,144.178.48.0/20
-IP-CIDR,192.35.50.0/24
-IP-CIDR,198.183.17.0/24
-IP-CIDR,205.180.175.0/24
+IP-CIDR,17.0.0.0/8,Apple_API
+IP-CIDR,63.92.224.0/19,Apple_API
+IP-CIDR,65.199.22.0/23,Apple_API
+IP-CIDR,139.178.128.0/18,Apple_API
+IP-CIDR,144.178.0.0/19,Apple_API
+IP-CIDR,144.178.36.0/22,Apple_API
+IP-CIDR,144.178.48.0/20,Apple_API
+IP-CIDR,192.35.50.0/24,Apple_API
+IP-CIDR,198.183.17.0/24,Apple_API
+IP-CIDR,205.180.175.0/24,Apple_API
