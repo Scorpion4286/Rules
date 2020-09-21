@@ -50,7 +50,7 @@ HOST,amap.com,Apple_CDN
 HOST,reserve-prime.apple.com,Apple_CDN
 HOST-SUFFIX,ess.apple.com,Apple_CDN
 HOST-SUFFIX,push.apple.com,Apple_CDN
-HOST-SUFFIX,push-apple.com.akadns.ne,Apple_CDNt
+HOST-SUFFIX,push-apple.com.akadns.ne,Apple_CDN
 # > Others
 HOST,api.smoot.apple.com,Apple_CDN
 HOST,captive.apple.com,Apple_CDN
