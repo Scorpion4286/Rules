@@ -7,10 +7,6 @@
 AND,((USER-AGENT,PUClient*), (NOT,((DOMAIN-SUFFIX,rr.tv)))),REJECT
 URL-REGEX,^https?:\/\/api\.rr\.tv\/(?:ad\/getAll$|storage/business/rootName/app/homePage),REJECT
 
-[URL Rewrite]
-# 115 App的签到按钮跳转重定向到离线下载页
-^http:\/\/115\.com\/\?ct=sign$ http://115.com/lx?taskdg=1 header
-
 [Script]
 # > 人人视频
 rrsp_video = type=http-response,requires-body=true,pattern=^https?:\/\/api\.rr\.tv\/watch\/v\d\/get_movie_info,script-path=https://Choler.github.io/Surge/Script/rrsp.js
