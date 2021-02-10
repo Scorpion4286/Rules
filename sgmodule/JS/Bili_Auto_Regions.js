@@ -14,7 +14,7 @@ const str = (() => {
 	} else if (current != CN) return CN;
 })()
 
-if (str && obj) {
+if (str) {
 	const change = $surge.setSelectGroupPolicy(Group, str);
 	const notify = $persistentStore.read('BiliAreaNotify') === 'true';
 	if (!notify) $notification.post(obj, ``, `${current}  =>  ${str}  =>  ${change?`🟢`:`🔴`}`);
