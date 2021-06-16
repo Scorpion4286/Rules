@@ -9,7 +9,7 @@ URL-REGEX,^https?:\/\/api\.rr\.tv\/(?:ad\/getAll$|storage/business/rootName/app/
 
 [Script]
 # > AQI替换
-AQI-US = type=http-response,pattern=https://weather-data.apple.com/v1/weather/[\w-]+/-?[0-9]+\.[0-9]+/-?[0-9]+\.[0-9]+\?,requires-body=true,script-path=script-path=https://raw.githubusercontent.com/Scorpion4286/Rules/master/sgmodule/JS/iOS14_Weather_AQI_Standard.js
+AQI-US = type=http-response,pattern=https://weather-data.apple.com/v1/weather/[\w-]+/-?[0-9]+\.[0-9]+/-?[0-9]+\.[0-9]+\?,requires-body=true,script-path=https://raw.githubusercontent.com/Scorpion4286/Rules/master/sgmodule/JS/iOS14_Weather_AQI_Standard.js
 
 # > 人人视频
 rrsp_video = type=http-response,requires-body=true,pattern=^https?:\/\/api\.rr\.tv\/watch\/v\d\/get_movie_info,script-path=https://Choler.github.io/Surge/Script/rrsp.js
