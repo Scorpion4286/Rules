@@ -1,18 +1,16 @@
-let body = JSON.parse($response.body.replace(/"\u53d7\u9650"/g, `""`));
 let $ = nobyda();
-const play = body.data || body.result || {};
-const run = SwitchRegion();
+let run = EnvInfo();
 
-async function SwitchRegion() {
+async function SwitchRegion(play) {
 	const Group = $.read('BiliArea_Policy') || 'StreamingSE'; //Your blibli policy group name.
 	const CN = $.read('BiliArea_CN') || 'DIRECT'; //Your China sub-policy name.
 	const TW = $.read('BiliArea_TW') || 'TW-Point'; //Your Taiwan sub-policy name.
 	const HK = $.read('BiliArea_HK') || 'HK-Point'; //Your HongKong sub-policy name.
-	const current = await $.getPolicy(Group) || 'Policy error ⚠️';
+	const current = await $.getPolicy(Group);
 	const area = (() => {
-		if (/\u50c5[\u4e00-\u9fa5]+\u6e2f/.test(play.title)) {
+		if (/\u50c5[\u4e00-\u9fa5]+\u6e2f|%20%E6%B8%AF&/.test(play)) {
 			if (current != HK) return HK;
-		} else if (/\u50c5[\u4e00-\u9fa5]+\u53f0/.test(play.title)) {
+		} else if (/\u50c5[\u4e00-\u9fa5]+\u53f0|%20%E5%8F%B0&/.test(play)) {
 			if (current != TW) return TW;
 		} else if (current != CN) return CN;
 	})()
@@ -20,18 +18,50 @@ async function SwitchRegion() {
 	if (area) {
 		const change = await $.setPolicy(Group, area);
 		const notify = $.read('BiliAreaNotify') === 'true';
-		if (!notify) $.notify(play.title || ``, ``, `${current}  =>  ${area}  =>  ${change?`🟢`:`🔴`}`);
-		if (change && !$.isQuanX) {
-			$done(); //Kill the connection. Due to the characteristics of Surge, it will auto reconnect with the new policy.
+		const msg = SwitchStatus(change, current, area);
+		if (!notify) {
+			$.notify(/^http/.test(play) || !play ? `` : play, ``, msg);
 		} else {
-			QueryRating();
+			console.log(`${/^http/.test(play)||!play?``:play}\n${msg}`);
 		}
+		if (change) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function SwitchStatus(status, original, newPolicy) {
+	if (status) {
+		return `${original}  =>  ${newPolicy}  =>  🟢`;
+	} else if (original === 2) {
+		return `切换失败, 策略组名未填写或填写有误 ⚠️`
+	} else if (original === 3) {
+		return `切换失败, 不支持您的VPN应用版本 ⚠️`
+	} else if (status === 0) {
+		return `切换失败, 子策略名未填写或填写有误 ⚠️`
 	} else {
-		QueryRating();
+		return `策略切换失败, 未知错误 ⚠️`
 	}
 }
 
-async function QueryRating() {
+function EnvInfo() {
+	if (typeof($response) !== 'undefined') {
+		const raw = JSON.parse($response.body);
+		const data = raw.data || raw.result || {};
+		//if surge or loon, $done() will auto reconnect with the new policy
+		SwitchRegion(data.title)
+			.then(s => s && !$.isQuanX ? $done() : QueryRating(raw, data));
+	} else {
+		const raw = $request.url;
+		const res = {
+			url: raw.replace(/%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&/g, '&')
+		};
+		SwitchRegion(raw).then(() => $done(res));
+	}
+}
+
+async function QueryRating(body, play) {
 	try {
 		const ratingEnabled = $.read('BiliDoubanRating') === 'false';
 		if (!ratingEnabled && play.title && body.data && body.data.badge_info) {
@@ -42,6 +72,9 @@ async function QueryRating() {
 			const exYear = body.data.publish.release_date_show.split(/^(\d{4})/)[1];
 			const filterInfo = [play.title, play.origin_name, play.staff.info + play.actor.info, exYear];
 			const [rating, folk, name, id, other] = ExtractMovieInfo([...t1, ...t2], filterInfo);
+			const limit = JSON.stringify(body.data.modules)
+				.replace(/"\u53d7\u9650"/g, `""`).replace(/("area_limit":)1/g, '$10');
+			body.data.modules = JSON.parse(limit);
 			body.data.detail = body.data.new_ep.desc.replace(/连载中,/, '');
 			body.data.badge_info.text = `⭐️ 豆瓣：${!$.is403?`${rating||'无评'}分 (${folk||'无评价'})`:`查询频繁！`}`;
 			body.data.evaluate = `${body.data.evaluate||''}\n\n豆瓣评分搜索结果: ${JSON.stringify(other,0,1)}`;
@@ -146,29 +179,28 @@ function nobyda() {
 		return response;
 	}
 	const getPolicy = (groupName) => {
-		const m = `切换策略失败, 您的版本不支持该功能\n`
 		if (isSurge) {
-			if (typeof($httpAPI) === 'undefined') return m;
+			if (typeof($httpAPI) === 'undefined') return 3;
 			return new Promise((resolve) => {
 				$httpAPI("GET", "v1/policy_groups/select", {
 					group_name: encodeURIComponent(groupName)
-				}, (b) => resolve(b.policy))
+				}, (b) => resolve(b.policy || 2))
 			})
 		}
 		if (isLoon) {
-			if (typeof($config.getPolicy) === 'undefined') return m;
+			if (typeof($config.getPolicy) === 'undefined') return 3;
 			const getName = $config.getPolicy(groupName);
-			return getName;
+			return getName || 2;
 		}
 		if (isQuanX) {
-			if (typeof($configuration) === 'undefined') return m;
+			if (typeof($configuration) === 'undefined') return 3;
 			return new Promise((resolve) => {
 				$configuration.sendMessage({
 					action: "get_policy_state"
 				}).then(b => {
 					if (b.ret && b.ret[groupName]) {
 						resolve(b.ret[groupName][1]);
-					} else resolve();
+					} else resolve(2);
 				}, () => resolve());
 			})
 		}
@@ -179,12 +211,12 @@ function nobyda() {
 				$httpAPI("POST", "v1/policy_groups/select", {
 					group_name: group,
 					policy: policy
-				}, (b) => resolve(!b.error))
+				}, (b) => resolve(!b.error || 0))
 			})
 		}
 		if (isLoon && typeof($config.getPolicy) !== 'undefined') {
 			const set = $config.setSelectPolicy(group, policy);
-			return set;
+			return set || 0;
 		}
 		if (isQuanX && typeof($configuration) !== 'undefined') {
 			return new Promise((resolve) => {
@@ -193,7 +225,7 @@ function nobyda() {
 					content: {
 						[group]: policy
 					}
-				}).then((b) => resolve(!b.error), () => resolve());
+				}).then((b) => resolve(!b.error || 0), () => resolve());
 			})
 		}
 	}
