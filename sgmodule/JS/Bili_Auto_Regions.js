@@ -70,7 +70,10 @@ async function QueryRating(body, play) {
 				GetRawInfo(play.origin_name)
 			]);
 			const exYear = body.data.publish.release_date_show.split(/^(\d{4})/)[1];
-			const filterInfo = [play.title, play.origin_name, play.staff.info + play.actor.info, exYear];
+			const info1 = (play.staff && play.staff.info) || '';
+			const info2 = (play.actor && play.actor.info) || '';
+			const info3 = (play.celebrity && play.celebrity.map(n => n.name).join('/')) || '';
+			const filterInfo = [play.title, play.origin_name, info1 + info2 + info3, exYear];
 			const [rating, folk, name, id, other] = ExtractMovieInfo([...t1, ...t2], filterInfo);
 			const limit = JSON.stringify(body.data.modules)
 				.replace(/"\u53d7\u9650"/g, `""`).replace(/("area_limit":)1/g, '$10');
