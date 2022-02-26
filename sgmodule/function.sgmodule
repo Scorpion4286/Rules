@@ -84,9 +84,6 @@
 ^http:\/\/(www.)?aicoin\.cn\/$ https://www.aicoin.com/ 302
 
 [Script]
-# > AQI替换
-iOS14美标空气质量 = type=http-response,pattern=^https:\/\/weather-data\.apple\.com\/v1\/weather\/[\w-]+\/-?[0-9]+\.[0-9]+\/-?[0-9]+\.[0-9]+\?,requires-body=true,script-path=https://raw.githubusercontent.com/Scorpion4286/Rules/master/sgmodule/JS/iOS14_Weather_AQI_US.js
-iOS15美标空气质量 = type=http-response,pattern=^https:\/\/weather-data\.apple\.com\/v2\/weather\/[\w-]+\/-?[0-9]+\.[0-9]+\/-?[0-9]+\.[0-9]+\?,requires-body=true,script-path=https://raw.githubusercontent.com/Scorpion4286/Rules/master/sgmodule/JS/iOS15_Weather_AQI_US.js
 
 # > Bilibli番剧，自动切换地区
 Bili Region = type=http-response,pattern=^https:\/\/ap(p|i)\.bilibili\.com\/(pgc\/view\/v\d\/app\/season|x\/v\d\/search\/defaultwords)\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Scorpion4286/Rules/master/sgmodule/JS/Bili_Auto_Regions.js
@@ -116,4 +113,4 @@ http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://
 http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
 
 [MITM]
-hostname = %APPEND% www.google.cn, www.firefox.com.cn, api.abema.io, weather-data.apple.com, ap?.bilibili.com, *.115.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, api.m.jd.com, trade-acs.m.taobao.com
+hostname = %APPEND% www.google.cn, www.firefox.com.cn, api.abema.io, ap?.bilibili.com, *.115.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, api.m.jd.com, trade-acs.m.taobao.com
