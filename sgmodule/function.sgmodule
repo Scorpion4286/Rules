@@ -3,8 +3,9 @@
 #!system=ios
 
 [URL Rewrite]
-# Redirect Google Search Service
-^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+# Redirect Google Service
+^https?://(www.)?g\.cn https://www.google.com 302
+^https?://(www.)?google\.cn https://www.google.com 302
 
 # Redirect Google Maps Service
 ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
@@ -17,6 +18,9 @@
 ^https?:\/\/(www.)?suning\.com\/ https://suning.com/ 302
 ^https?:\/\/(www.)?yhd\.com\/ https://yhd.com/ 302
 
+# Redirect False to True
+# > Firefox - www.firefox.com.cn
+^https?:\/\/(www.)?firefox\.com\.cn\/(download\/)?$ https://www.mozilla.org/zh-CN/firefox/new/ 302
 # > IGN China to IGN Global
 ^https?:\/\/(www.)?ign\.xn--fiqs8s\/ http://cn.ign.com/ccpref/us 302
 # > Fake Website Made By C&J Marketing
@@ -59,6 +63,7 @@
 ^https?:\/\/(www.)?nicelabel\.cc\/ https://www.nicelabel.com/zh/ 302
 ^https?:\/\/(www.)?ntfsformac\.cc\/ https://www.tuxera.com/products/tuxera-ntfs-for-mac-cn/ 302
 ^https?:\/\/(www.)?ntfsformac\.cn\/ https://china.paragon-software.com/home-mac/ntfs-for-mac/ 302
+^https?:\/\/(www.)?officesoftcn\.com\/ https://www.microsoft.com/zh-cn/microsoft-365 302
 ^https?:\/\/(www.)?overturechina\.com\/ https://sonicscores.com/ 302
 ^https?:\/\/(www.)?passwordrecovery\.cn\/ https://cn.elcomsoft.com/aopr.html 302
 ^https?:\/\/(www.)?pdfexpert\.cc\/ https://pdfexpert.com/zh 302
@@ -68,10 +73,28 @@
 ^https?:\/\/(www.)?vegaschina\.cn\/ https://www.vegascreativesoftware.com/ 302
 ^https?:\/\/(www.)?xshellcn\.com\/ https://www.netsarang.com/zh/xshell/ 302
 ^https?:\/\/(www.)?yuanchengxiezuo\.com\/ https://www.teamviewer.com/ 302
-^https?:\/\/(www.)?zbrushcn.com/ https://pixologic.com/ 302
+^https?:\/\/(www.)?zbrushcn\.com\/ https://pixologic.com/ 302
 
 # AbeamTV - api.abema.io
 ^https?:\/\/api\.abema\.io\/v\d\/ip\/check - reject
+
+# JD Protection
+^https?://union\.click\.jd\.com/jda? http://union.click.jd.com/jda?adblock= header
+^https?://union\.click\.jd\.com/sem.php? http://union.click.jd.com/sem.php?adblock= header
+# TikTok Internation
+(?<=(carrier|account|sys|sim)_region=)CN JP 307
+# Resso
+(?<=(carrier|account|sys|sim)_region=)cn in 307
+
+# Special AD Block Section
+
+# >> Kugou
+^https?://(2(5[0-5]{1}|[0-4]\d{1})|[0-1]?\d{1,2})(\.(2(5[0-5]{1}|[0-4]\d{1})|[0-1]?\d{1,2})){3}/EcomResourceServer/AdPlayPage/adinfo - reject
+^https?://(2(5[0-5]{1}|[0-4]\d{1})|[0-1]?\d{1,2})(\.(2(5[0-5]{1}|[0-4]\d{1})|[0-1]?\d{1,2})){3}/MobileAdServer/ - reject
+# >> eLong
+^https?://(2(5[0-5]{1}|[0-4]\d{1})|[0-1]?\d{1,2})(\.(2(5[0-5]{1}|[0-4]\d{1})|[0-1]?\d{1,2})){3}/(adgateway|adv)/ - reject
+# >> NOMO
+^https?://nomo.dafork.com/api/v3/iap/ios_product_list https://ruleset.skk.moe/Assets/nomo.json 302
 
 [Script]
 
