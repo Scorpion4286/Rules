@@ -6,7 +6,7 @@ async function SwitchRegion(play) {
 	const CN = $.read('BiliArea_CN') || 'DIRECT'; //Your China sub-policy name.
 	const TW = $.read('BiliArea_TW') || 'TW-Point'; //Your Taiwan sub-policy name.
 	const HK = $.read('BiliArea_HK') || 'HK-Point'; //Your HongKong sub-policy name.
-	const DF = $.read('BiliArea_DF') || 'TW-Point'; //Sub-policy name used after region is blocked(e.g. url 404)
+	const DF = $.read('BiliArea_DF') || 'HK-Point'; //Sub-policy name used after region is blocked(e.g. url 404)
 	const off = $.read('BiliArea_disabled') || ''; //WiFi blacklist(disable region change), separated by commas.
 	const current = await $.getPolicy(Group);
 	const area = (() => {
@@ -155,7 +155,7 @@ function GetRawInfo(t) {
 			} else {
 				if (/\u767b\u5f55<\/a>\u540e\u91cd\u8bd5\u3002/.test(data)) $.is403 = true;
 				let s = data.replace(/\n| |&#\d{2}/g, '')
-					.match(/\[\u7535\u5f71\].+?subject-cast\">.+?<\/span>/g) || [];
+					.match(/\[(\u7535\u5f71|\u7535\u89c6\u5267)\].+?subject-cast\">.+?<\/span>/g) || [];
 				for (let i = 0; i < s.length; i++) {
 					res.push({
 						name: s[i].split(/\}\)">(.+?)<\/a>/)[1],
