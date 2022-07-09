@@ -58,23 +58,25 @@ function SwitchStatus(status, original, newPolicy) {
 }
 
 function EnvInfo() {
+	const url = $request.url;
 	if (typeof($response) !== 'undefined') {
-		const raw = JSON.parse($response.body);
+		const raw = JSON.parse($response.body || "{}");
 		const data = raw.data || raw.result || {};
-		SwitchRegion(data.title || (raw.code === -404 ? -404 : null))
+		const t1 = (data.series && data.series.series_title) || data.title;
+		const t2 = raw.code === -404 ? -404 : null;
+		SwitchRegion(t1 || t2)
 			.then(s => s ? $done({
-				status: $.isQuanX ? "HTTP/1.1 408 Request Timeout" : 408,
+				status: $.isQuanX ? "HTTP/1.1 307" :307,
 				headers: {
-					Connection: "close"
+					Location: url
 				},
 				body: "{}"
 			}) : QueryRating(raw, data));
 	} else {
-		const raw = $request.url;
 		const res = {
-			url: raw.replace(/%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&/g, '&')
+			url: url.replace(/%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&/g, '&')
 		};
-		SwitchRegion(raw).then(() => $done(res));
+		SwitchRegion(url).then(() => $done(res));
 	}
 }
 
@@ -83,7 +85,7 @@ async function QueryRating(body, play) {
 		const ratingEnabled = $.read('BiliDoubanRating') === 'false';
 		if (!ratingEnabled && play.title && body.data && body.data.badge_info) {
 			const [t1, t2] = await Promise.all([
-				GetRawInfo(play.title),
+				GetRawInfo(play.title.replace(/\uff08\u50c5[\u4e00-\u9fa5]+\u5340\uff09/, '')),
 				GetRawInfo(play.origin_name)
 			]);
 			const exYear = body.data.publish.release_date_show.split(/^(\d{4})/)[1];
